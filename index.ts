@@ -20,25 +20,6 @@ let isOnline = true;
 planet = "Jupiter";
 planet;
 
-// Functions + Types
-function greet(name: string): string {
-  return "Hello " + name;
-}
-
-// function greet(name: string): string {
-//   return 100;
-// }
-
-console.log(greet("Ronny"));
-// console.log(greet(123));
-
-function calcTotal(price: number, quantity: number): number {
-  return price * quantity;
-}
-
-console.log(calcTotal(350, 6));
-// console.log(calcTotal("10", 2));
-
 // Arrays
 let numbers: number[] = [1, 2, 3];
 numbers;
@@ -46,6 +27,7 @@ numbers.push(57);
 numbers;
 // numbers.push("hello");
 
+// Alternative syntax
 let names: Array<string> = ["Becca", "Jenny"];
 names;
 
