@@ -1,4 +1,4 @@
-// Functions + Types
+// Basic types and functions
 function greet(name: string): string {
   return "Hello " + name;
 }
@@ -63,32 +63,6 @@ console.log(divide(10, 2));
 console.log(divide(10, 0));
 
 // Name formatter
-// function formatName(
-//   firstName: string = "john",
-//   lastName: string = "doe",
-//   middleName?: string,
-// ): string {
-//   let formatFirst = firstName
-//     .split(" ")
-//     .map((letter) => letter[0].toUpperCase() + letter.slice(1));
-
-//   let formatLast = lastName
-//     .split(" ")
-//     .map((letter) => letter[0].toUpperCase() + letter.slice(1));
-
-//   let formatMiddle;
-
-//   if (middleName !== undefined) {
-//     formatMiddle = middleName
-//       .split(" ")
-//       .map((letter) => letter[0].toUpperCase() + letter.slice(1));
-//   }
-
-//   return middleName
-//     ? `${formatFirst} ${formatMiddle} ${formatLast}`
-//     : `${formatFirst} ${formatLast}`;
-// }
-
 function capitalizeWords(value: string): string {
   return value
     .split(" ")
@@ -113,38 +87,12 @@ function formatName(
 }
 
 console.log(formatName("dontay", "banks"));
-console.log(formatName("dontay", "banks", "enner"));
-console.log(formatName("john doe", "smith"));
+console.log(formatName("Rebecca", "queen", "rose"));
+console.log(formatName());
 
 // Array analyzer
-// function analyzeNumbers(numbers: number[]) {
-//   if (numbers.length === 0) return 0;
-
-//   let sum = 0;
-//   let min = Infinity;
-//   let max = -Infinity;
-
-//   // const min = Math.min(...numbers);
-//   // const max = Math.max(...numbers);
-
-//   for (const num of numbers) {
-//     if (num < min) min = num;
-//     if (num > max) max = num;
-//     sum += num;
-//   }
-
-//   const average = sum / numbers.length;
-//   // const average = numbers.reduce((sum, num) => sum + num, 0) / numbers.length;
-
-//   return {
-//     average,
-//     min,
-//     max,
-//   };
-// }
-
 function analyzeNumbers(numbers: number[]): {
-  average: number;
+  avg: number;
   min: number;
   max: number;
 } | null {
@@ -154,14 +102,20 @@ function analyzeNumbers(numbers: number[]): {
   let min = Infinity;
   let max = -Infinity;
 
+  // const min = Math.min(...numbers);
+  // const max = Math.max(...numbers);
+
   for (const num of numbers) {
     if (num < min) min = num;
     if (num > max) max = num;
     sum += num;
   }
 
+  const avg = sum / numbers.length;
+  // const avg = numbers.reduce((sum, num) => sum + num, 0) / numbers.length;
+
   return {
-    average: sum / numbers.length,
+    avg,
     min,
     max,
   };
@@ -182,6 +136,8 @@ const getEvenOdd = (numbers: number[]): string[] => {
     }
   }
 
+  //  return numbers.map((num) => (num % 2 === 0 ? "even" : "odd"));
+
   return newArr;
 };
 
@@ -190,11 +146,6 @@ const getEvenOdd = (numbers: number[]): string[] => {
 // };
 
 console.log(getEvenOdd([1, 2, 3]));
-
-// Safe parser
-// const parseNumber = function (value: string): number | null {
-//   return typeof value === "string" ? Number(value) : null;
-// };
 
 const parseNumber = (value: string): number | null => {
   const parsed = Number(value);
