@@ -1,4 +1,4 @@
-// Objects, Interfaces & Type Aliases
+// Objects & Type Aliases
 
 // Objects
 const product: { name: string; price: number; inStock: boolean } = {
@@ -155,16 +155,3 @@ const post: BlogPost = {
 };
 
 console.log(post);
-
-// Interfaces
-interface Person {
-  name: string;
-  age: number;
-}
-
-const person: Person = {
-  name: "Andy",
-  age: 77,
-};
-
-console.log(person);
