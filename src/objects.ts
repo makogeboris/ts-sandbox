@@ -51,24 +51,24 @@ type User = {
   greet: () => string;
 };
 
-const user: User = {
-  id: 42,
-  username: "xeno88",
-  email: "xeno88@email.com",
-  isAdmin: true,
-  greet(): string {
-    return `Hello! ${this.username}`;
-  },
-};
+// const user: User = {
+//   id: 42,
+//   username: "xeno88",
+//   email: "xeno88@email.com",
+//   isAdmin: true,
+//   greet(): string {
+//     return `Hello! ${this.username}`;
+//   },
+// };
 
-console.log(user);
+// console.log(user);
 
 function getUserInfo(user: User): string {
   const role = user.isAdmin ? "admin" : "user";
   return `${user.username} ${role}`;
 }
 
-console.log(getUserInfo(user));
+// console.log(getUserInfo(user));
 
 // Readonly properties
 type Student = {
